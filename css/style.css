@@ -95,9 +95,6 @@ body {
   transition: all 0.3s ease;
   padding: 20px 4px 4px;
 }
-.header__sidebar--close {
-  width: 84px;
-}
 .sidebar__header {
   padding: 0 17px;
 }
@@ -196,6 +193,7 @@ body {
   transition: all 0.3s ease-out;
   transform: translateX(25px);
   will-change: transform;
+  pointer-events: none;
   opacity: 0;
 }
 .sidebar__switch-button--active {
@@ -236,11 +234,9 @@ body {
   transform: translateY(-20px);
   opacity: 0;
 }
-
-.nav__list:nth-child(2) .nav__link {
+.nav__link-lower {
   transform: translateY(20px);
 }
-
 .header__sidebar--close .nav__link::after {
   position: absolute;
   content: attr(data-title);
@@ -275,9 +271,9 @@ body {
   max-width: 40px;
 }
 .sidebar__profile-title {
-  font-size: 10px;
+  font-size: 9px;
   font-weight: normal;
-  margin-bottom: 4px;
+  margin-bottom: 2px;
 }
 .sidebar__profile-name {
   color: #2912c4;
@@ -295,7 +291,6 @@ body {
   border-radius: 6px;
   transition: all 0.3s ease;
 }
-
 .sidebar__profile-button i {
   font-size: 10px;
 }
@@ -331,6 +326,10 @@ body {
 .sidebar__profile-button:hover {
   background-color: #d5d6ec;
 }
+.header__sidebar--close {
+  width: 84px;
+  animation: sidebar-overflow 0.8s ease forwards;
+}
 .header__sidebar--close .sidebar__logo-image {
   margin-right: 0;
 }
@@ -340,6 +339,9 @@ body {
 .header__sidebar--close .sidebar__profile-button {
   animation: sidebar-close 0.15s ease forwards;
 }
+.header__sidebar--open {
+  overflow: hidden;
+}
 .header__sidebar--open .sidebar__logo-name,
 .header__sidebar--open .nav__list span,
 .header__sidebar--open .sidebar__profile-description,
@@ -347,10 +349,7 @@ body {
   animation: sidebar-open 0.8s ease forwards;
 }
 .header__sidebar--close .nav__item i {
-  animation: sidebar-margine 0.15s ease forwards;
-}
-.header__sidebar--close .nav__item {
-  animation: sidebar-center 0.15s ease forwards;
+  animation: link-margine 0.15s ease forwards;
 }
 .header__sidebar--close .sidebar__profile:hover {
   background-color: #f1f4f9;
@@ -376,7 +375,15 @@ body {
     opacity: 1;
   }
 }
-@keyframes sidebar-margine {
+@keyframes sidebar-overflow {
+  0% {
+    overflow: hidden;
+  }
+  100% {
+    overflow: initial;
+  }
+}
+@keyframes link-margine {
   0% {
     margin-right: 15px;
   }
