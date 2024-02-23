@@ -5,7 +5,7 @@ const sidebarSwitchButton = document.querySelector(".sidebar__switch-button");
 const sidebar = document.querySelector(".sidebar");
 const decors = document.querySelector(".sidebar__decor-items");
 const logo = document.querySelector(".sidebar__logo");
-const profile = document.querySelector(".sidebar__profile-content");
+const profile = document.querySelector(".sidebar__profile-info");
 
 navLinks.forEach((link) => {
   link.addEventListener("click", () => {
