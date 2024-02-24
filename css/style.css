@@ -137,13 +137,11 @@ body {
   background-color: #61c755;
 }
 .sidebar__logo {
-  display: inline-flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
   transform: translateY(-20px);
   opacity: 0;
   transition: all 0.3s ease;
+  padding: 0 6px;
 }
 .sidebar__logo-link {
   display: inline-flex;
@@ -151,7 +149,6 @@ body {
 }
 .sidebar__logo-image {
   max-width: 30px;
-  margin-left: 6px;
 }
 .sidebar__logo-name {
   font-size: 20px;
@@ -218,10 +215,6 @@ body {
 .nav__item:not(:last-child) {
   margin-bottom: 10px;
 }
-.nav__item i {
-  transition: margin-right 0.15s ease;
-  margin-right: 15px;
-}
 .nav__link {
   position: relative;
   display: inline-flex;
@@ -234,6 +227,9 @@ body {
   height: 40px;
   transform: translateY(-20px);
   opacity: 0;
+}
+.nav__link span {
+  margin-left: 15px;
 }
 .nav__link:focus-visible {
   outline: none;
@@ -305,7 +301,8 @@ body {
 
 /* animation */
 
-.sidebar__switch-button:hover.sidebar__switch-button::after {
+.sidebar__switch-button:hover.sidebar__switch-button::after,
+.sidebar__switch-button:focus-visible.sidebar__switch-button::after {
   transform: translateX(48px);
   opacity: 1;
 }
@@ -356,14 +353,10 @@ body {
 .header__sidebar--open .sidebar__profile-button {
   animation: sidebar-open 0.6s ease forwards;
 }
-.header__sidebar--close .nav__item i {
-  margin-right: 0;
-}
 .header__sidebar--close .sidebar__profile:hover {
   background-color: #f1f4f9;
   cursor: pointer;
 }
-
 @keyframes sidebar-close {
   0% {
     opacity: 1;
