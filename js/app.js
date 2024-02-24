@@ -1,4 +1,5 @@
 const sidebarSwitchButton = document.querySelector(".sidebar__switch-button");
+const themeSwitchButton = document.querySelector(".theme-button");
 const navLinksUpper = document.querySelectorAll(".nav__link-upper");
 const navLinksLower = document.querySelectorAll(".nav__link-lower");
 const navLinks = document.querySelectorAll(".nav__link");
@@ -56,4 +57,10 @@ document.addEventListener("DOMContentLoaded", () => {
   setTimeout(() => {
     sidebarSwitchButton.classList.add("sidebar__switch-button-start");
   }, 2500);
+});
+
+////////////////////////theme-switch////////////////////////////
+
+themeSwitchButton.addEventListener("click", () => {
+  document.body.classList.toggle("dark-theme");
 });
