@@ -151,13 +151,13 @@ body {
 }
 .sidebar__logo-image {
   max-width: 30px;
-  margin-right: 5px;
   margin-left: 6px;
 }
 .sidebar__logo-name {
   font-size: 20px;
   font-weight: bold;
   color: #2912c4;
+  margin-left: 5px;
 }
 .sidebar__switch-button {
   position: absolute;
@@ -219,6 +219,7 @@ body {
   margin-bottom: 10px;
 }
 .nav__item i {
+  transition: margin-right 0.15s ease;
   margin-right: 15px;
 }
 .nav__link {
@@ -234,6 +235,11 @@ body {
   transform: translateY(-20px);
   opacity: 0;
 }
+.nav__link:focus-visible {
+  outline: none;
+  color: #1b263c;
+  background-color: #f1f4f9;
+}
 .nav__link-lower {
   transform: translateY(20px);
 }
@@ -241,7 +247,7 @@ body {
   position: absolute;
   content: attr(data-title);
   top: 50%;
-  left: 35px;
+  left: 34px;
   transform: translate(0, -50%);
   font-size: 12px;
   border-radius: 13px;
@@ -256,6 +262,8 @@ body {
   border-top: 1px solid #f3f5f9;
   padding: 18px;
   transition: all 0.3s ease;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
 }
 .sidebar__profile-info {
   display: flex;
@@ -337,7 +345,7 @@ body {
 .header__sidebar--close .nav__list span,
 .header__sidebar--close .sidebar__profile-description,
 .header__sidebar--close .sidebar__profile-button {
-  animation: sidebar-close 0.15s ease forwards;
+  animation: sidebar-close 0.2s ease forwards;
 }
 .header__sidebar--open {
   overflow: hidden;
@@ -346,10 +354,10 @@ body {
 .header__sidebar--open .nav__list span,
 .header__sidebar--open .sidebar__profile-description,
 .header__sidebar--open .sidebar__profile-button {
-  animation: sidebar-open 0.8s ease forwards;
+  animation: sidebar-open 0.6s ease forwards;
 }
 .header__sidebar--close .nav__item i {
-  animation: link-margine 0.15s ease forwards;
+  margin-right: 0;
 }
 .header__sidebar--close .sidebar__profile:hover {
   background-color: #f1f4f9;
@@ -359,11 +367,9 @@ body {
 @keyframes sidebar-close {
   0% {
     opacity: 1;
-    transform: translateX(0);
   }
   100% {
     opacity: 0;
-    transform: translateX(30px);
     display: none;
   }
 }
@@ -381,14 +387,6 @@ body {
   }
   100% {
     overflow: initial;
-  }
-}
-@keyframes link-margine {
-  0% {
-    margin-right: 15px;
-  }
-  100% {
-    margin-right: 0;
   }
 }
 .sidebar__animate-start {

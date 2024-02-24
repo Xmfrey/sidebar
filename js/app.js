@@ -1,11 +1,13 @@
-const navLinks = document.querySelectorAll(".nav__link");
+const sidebarSwitchButton = document.querySelector(".sidebar__switch-button");
 const navLinksUpper = document.querySelectorAll(".nav__link-upper");
 const navLinksLower = document.querySelectorAll(".nav__link-lower");
-const sidebarSwitchButton = document.querySelector(".sidebar__switch-button");
-const sidebar = document.querySelector(".sidebar");
+const navLinks = document.querySelectorAll(".nav__link");
+const profile = document.querySelector(".sidebar__profile-info");
 const decors = document.querySelector(".sidebar__decor-items");
 const logo = document.querySelector(".sidebar__logo");
-const profile = document.querySelector(".sidebar__profile-info");
+const sidebar = document.querySelector(".sidebar");
+
+///////////////////////links-state/////////////////////////////////
 
 navLinks.forEach((link) => {
   link.addEventListener("click", () => {
@@ -16,11 +18,10 @@ navLinks.forEach((link) => {
   });
 });
 
-//////////////////////////////////////////////////////////
+///////////////////////sidebar-switch/////////////////////////////
 
 sidebarSwitchButton.addEventListener("click", (e) => {
   sidebarSwitchButton.classList.toggle("sidebar__switch-button--active");
-
   if (sidebar.classList.contains("header__sidebar--close")) {
     sidebar.classList.remove("header__sidebar--close");
     sidebar.classList.add("header__sidebar--open");
@@ -30,33 +31,28 @@ sidebarSwitchButton.addEventListener("click", (e) => {
   }
 });
 
-////////////////////////////////////////////////////
+////////////////////////start-animate////////////////////////////
 
 document.addEventListener("DOMContentLoaded", () => {
   setTimeout(() => {
     decors.classList.add("sidebar__decor-start");
   }, 500);
-
   setTimeout(() => {
     logo.classList.add("sidebar__animate-start");
   }, 800);
-
   navLinksUpper.forEach((link, index) => {
     setTimeout(() => {
       link.classList.add("sidebar__animate-start");
     }, index * 200 + 1000);
   });
-
   navLinksLower.forEach((link, index) => {
     setTimeout(() => {
       link.classList.add("sidebar__animate-start");
     }, index * -200 + 2200);
   });
-
   setTimeout(() => {
     profile.classList.add("sidebar__animate-start");
   }, 1500);
-
   setTimeout(() => {
     sidebarSwitchButton.classList.add("sidebar__switch-button-start");
   }, 2500);
