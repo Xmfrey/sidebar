@@ -27,9 +27,11 @@ sidebarSwitchButton.addEventListener("click", (e) => {
   if (sidebar.classList.contains("header__sidebar--close")) {
     sidebar.classList.remove("header__sidebar--close");
     sidebar.classList.add("header__sidebar--open");
+    profileButton.removeAttribute("tabindex");
   } else {
     sidebar.classList.remove("header__sidebar--open");
     sidebar.classList.add("header__sidebar--close");
+    profileButton.setAttribute("tabindex", 0);
   }
 });
 

@@ -95,7 +95,7 @@ body {
 .sidebar {
   display: grid;
   grid-template-rows: auto 1fr auto;
-  height: 750px;
+  min-height: 750px;
   width: 230px;
   transition: all 0.3s ease;
   padding: 20px 4px 4px;
@@ -352,6 +352,10 @@ body {
   background-color: #f1f4f9;
   cursor: pointer;
 }
+.header__sidebar--close .sidebar__profile:focus-visible {
+  outline: none;
+  background-color: #f1f4f9;
+}
 @keyframes sidebar-close {
   0% {
     opacity: 1;
@@ -438,6 +442,9 @@ body {
   background-color: #121c2f;
 }
 .dark-theme .header__sidebar--close .sidebar__profile:hover {
+  background-color: #0d0b46;
+}
+.dark-theme .header__sidebar--close .sidebar__profile:focus-visible {
   background-color: #0d0b46;
 }
 .dark-theme .theme-button {
