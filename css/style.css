@@ -197,7 +197,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 0 19px;
+  padding: 0 18px;
 }
 .nav__list:nth-child(2) {
   margin-bottom: 10px;
