@@ -146,6 +146,7 @@ body {
   font-weight: bold;
   color: #2912c4;
   margin-left: 5px;
+  transition: all 0.3s ease;
 }
 .sidebar__switch-button {
   position: absolute;
@@ -199,9 +200,9 @@ body {
   padding: 0 19px;
 }
 .nav__list:nth-child(2) {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
-.nav__item:not(:last-child) {
+.nav__item {
   margin-bottom: 10px;
 }
 .nav__link {
@@ -216,6 +217,13 @@ body {
   height: 40px;
   transform: translateY(-20px);
   opacity: 0;
+}
+.nav__link i {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 19px;
+  height: 19px;
 }
 .nav__link span {
   margin-left: 15px;
@@ -270,6 +278,7 @@ body {
 }
 .sidebar__profile-name {
   color: #2912c4;
+  transition: all 0.3s ease;
 }
 .sidebar__profile-button {
   position: absolute;
@@ -320,7 +329,6 @@ body {
 }
 .header__sidebar--close {
   width: 84px;
-  animation: sidebar-overflow 0.8s ease forwards;
 }
 .header__sidebar--close .sidebar__logo-image {
   margin-right: 0;
@@ -329,7 +337,7 @@ body {
 .header__sidebar--close .nav__list span,
 .header__sidebar--close .sidebar__profile-description,
 .header__sidebar--close .sidebar__profile-button {
-  animation: sidebar-close 0.2s ease forwards;
+  animation: sidebar-close 0.08s ease forwards;
 }
 .header__sidebar--open {
   overflow: hidden;
@@ -359,14 +367,6 @@ body {
   }
   100% {
     opacity: 1;
-  }
-}
-@keyframes sidebar-overflow {
-  0% {
-    overflow: hidden;
-  }
-  100% {
-    overflow: initial;
   }
 }
 .sidebar__animate-start {

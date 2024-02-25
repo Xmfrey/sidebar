@@ -3,6 +3,7 @@ const themeSwitchButton = document.querySelector(".theme-button");
 const navLinksUpper = document.querySelectorAll(".nav__link-upper");
 const navLinksLower = document.querySelectorAll(".nav__link-lower");
 const navLinks = document.querySelectorAll(".nav__link");
+const profileButton = document.querySelector(".sidebar__profile");
 const profile = document.querySelector(".sidebar__profile-info");
 const decors = document.querySelector(".sidebar__decor-items");
 const logo = document.querySelector(".sidebar__logo");
